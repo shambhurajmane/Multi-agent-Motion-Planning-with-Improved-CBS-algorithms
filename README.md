@@ -7,7 +7,7 @@ This repository delves into the critical realm of multi-agent path planning of N
 This project addresses the domain of multi-agent path planning for Non-holonomic Mobile robots, specifically focusing on implementing ICBS (Improved Conflict-Based Search). The objective is to facilitate the seamless coordination of multiple agents navigating constrained spaces, ensuring operational efficiency, safety, and collision avoidance. The primary application area is pick and place operations within a warehouse, emphasizing precision, speed, and safety.
 
 
-<img src="data/readme/application.jpg" alt="Logo" width="700" height="600">
+<img src="data/application.jpeg" alt="Logo" width="300" height="200">
 
 ## Multi-agent path finding (MAPF): Grid based vs continuous space-based motion planning
 
@@ -22,7 +22,7 @@ Applicability: | Well-suited for environments with clearly defined paths and dis
 
 
 
-<img src="results/results.gif" alt="Logo" width="1000" height="300">
+<img src="data/results.gif" alt="Logo" width="500" height="200">
 
 
 ## Methods
@@ -31,19 +31,18 @@ Applicability: | Well-suited for environments with clearly defined paths and dis
 - We have employed Hybrid A star algorithm in 2D environment to plan paths for multi agents. Hybrid A star will be acting as the low-level algorithm for ICBS.
 - We have implemented the algorithm which employs prioritized conflict resolution and disjoint splitting to enhance the path planning process.
 
-<img src="results/stages.png" alt="Logo" width="1000" height="300">
+<img src="results/stages.png" alt="Logo" width="800" height="200">
 Stages: a)Agents at initial position, b) Agent 1(left) is prioritized so agent 2 changed the path, c) Agent 2 planned a parallel optimum path for goal,
 d) Agents at goal position, (Green dots shown illustrate the conflict locations resolved/ avoided while planning path
 
 
 ## How to run the code
 Code </br>
-── BreadcrumbsMulti-agent-Motion-Planning-with-Improved-CBS-algorithms/ </br>
+── Multi-agent-Motion-Planning-with-Improved-CBS-algorithms/ </br>
    ├── Astar.py</br>
    ├── cbs.py</br>
    ├── main.py</br>
-   ├── README.md</br>
-   └── requirements.txt</br>
+   └── README.md</br>
 
 Requirements:
 - numpy==1.20.3
@@ -54,18 +53,24 @@ Requirements:
 run :
 - python3 run main.py
 
+ArgOS implementation is yet to be added.
+
+<img src="data/3dsimulation.gif" alt="Logo" width="500" height="200">
+
 ## Results
 
 Results are analyzed for two types of agents, holonomic and non-holonomic considering key points in motion planning performance check as follows:
 * Path Optimality:
-    
   * Paths found for holonomic agents were optimum paths for given start and goal locations after resolving conflicts.
   * Paths found for non-holonomic agents were suboptimum paths for given start and goal locations after resolving conflicts.
 * Conflict resolving:
-  * Paths found for holonomic as well as non-holonomic agents were without conflicts for all the cases with 100% success.
+  * Paths found for holonomic as well as non-holonomic agents were without conflicts for all the cases with 100\% success.
 * Completeness:
   * Paths found for holonomic agents guarantee finding a solution if one exist.
   * Paths found for non-holonomic agents doesnot guarantee finding a solution.
+
+## Edge Cases
+<img src="data/edge_case.gif" alt="Logo" width="500" height="200">
 
 
 <!-- CONTRIBUTING -->
